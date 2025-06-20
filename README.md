@@ -3,8 +3,9 @@ An integrated web-based application built using Flask and MySQL to streamline op
 
 ## 🚀 Features
 
-## 👥 User Roles
-Donor
+### 👥 User Roles
+
+### #Donor
 
 Login/Register
 
@@ -16,7 +17,7 @@ Choose to donate anonymously
 
 Get a thank-you confirmation
 
-Staff/Admin
+#### Staff/Admin
 
 Secure login
 
