@@ -1,4 +1,4 @@
-#🏢 NGO Management System
+# NGO Management System
 An integrated web-based application built using Flask and MySQL to streamline operations of a Non-Governmental Organization (NGO), enhancing transparency, donor engagement, and inventory tracking.
 
 ##🚀 Features
