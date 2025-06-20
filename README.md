@@ -38,10 +38,11 @@ Number of active donors
 
 Last 5 donation entries
 
-### 💰 Donation Types
-Monetary Donation: Scan a UPI QR code, confirm payment, and store record.
+## 💰 Donation Types
 
-In-Kind Donation: Donate physical items by category and quantity.
+**Monetary Donation:** Scan a UPI QR code, confirm payment, and store record.
+
+**In-Kind Donation:** Donate physical items by category and quantity.
 
 ## 🛠️ Tech Stack
 Component	Technology
