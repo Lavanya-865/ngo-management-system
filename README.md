@@ -1,9 +1,9 @@
 # NGO Management System
 An integrated web-based application built using Flask and MySQL to streamline operations of a Non-Governmental Organization (NGO), enhancing transparency, donor engagement, and inventory tracking.
 
-##🚀 Features
+## 🚀 Features
 
-##👥 User Roles
+## 👥 User Roles
 Donor
 
 Login/Register
@@ -26,7 +26,7 @@ View recent donations
 
 Manage inventory (add/update/delete items)
 
-##📊 Staff Dashboard Highlights
+## 📊 Staff Dashboard Highlights
 Total monetary donations
 
 Count of in-kind donations
@@ -37,12 +37,12 @@ Number of active donors
 
 Last 5 donation entries
 
-💰 Donation Types
+### 💰 Donation Types
 Monetary Donation: Scan a UPI QR code, confirm payment, and store record.
 
 In-Kind Donation: Donate physical items by category and quantity.
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 Component	Technology
 Backend	Python (Flask)
 Frontend	HTML, CSS
@@ -50,7 +50,7 @@ Database	MySQL
 Styling	Custom CSS
 Libraries Used	mysql.connector, Flask
 
-##🗃️ Database Schema Overview
+## 🗃️ Database Schema Overview
 Tables:
 staff (staff_id, username, email, password, ngo_id)
 
@@ -64,48 +64,15 @@ children (child_id, name, dob, gender, status, ngo_id) (optional/for future expa
 
 ngo (ngo_id, name, contact_email, registration_number, city, state, country, phone) (optional)
 
-🔐 Authentication
+### 🔐 Authentication
 Session-based login using Flask session
 
 Role-based redirection (Donor vs Staff)
 
 Logout functionality available for both roles
 
-##📂 How to Run Locally
-Clone the repository:
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/ngo-management-system.git
-cd ngo-management-system
-Setup your MySQL database:
-
-Create a database ngo_management
-
-Run the SQL schema provided (or use the given ER diagram)
-
-Configure your credentials in app.py:
-
-python
-Copy
-Edit
-ms.connect(host="localhost", user="your_user", password="your_password", database="ngo_management")
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install flask mysql-connector-python
-Run the Flask app:
-
-bash
-Copy
-Edit
-python app.py
-Visit http://127.0.0.1:5000/ in your browser.
-
-##📌 Future Enhancements
+## 📌 Future Enhancements
 Track expenses and fund utilization
 
 Add automated email acknowledgments
@@ -114,8 +81,8 @@ Add user registration with OTP/email verification
 
 Analytics and visualizations using Chart.js
 
-🙌 Contributors
+## 🙌 Contributors
 Lavanya Mall Thakur — @lavanya-865
 
-📃 License
+## 📃 License
 This project is for academic and non-commercial use only.
