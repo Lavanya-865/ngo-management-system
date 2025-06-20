@@ -1,8 +1,9 @@
-🏢 NGO Management System
+#🏢 NGO Management System
 An integrated web-based application built using Flask and MySQL to streamline operations of a Non-Governmental Organization (NGO), enhancing transparency, donor engagement, and inventory tracking.
 
-🚀 Features
-👥 User Roles
+##🚀 Features
+
+##👥 User Roles
 Donor
 
 Login/Register
@@ -25,7 +26,7 @@ View recent donations
 
 Manage inventory (add/update/delete items)
 
-📊 Staff Dashboard Highlights
+##📊 Staff Dashboard Highlights
 Total monetary donations
 
 Count of in-kind donations
@@ -41,7 +42,7 @@ Monetary Donation: Scan a UPI QR code, confirm payment, and store record.
 
 In-Kind Donation: Donate physical items by category and quantity.
 
-🛠️ Tech Stack
+##🛠️ Tech Stack
 Component	Technology
 Backend	Python (Flask)
 Frontend	HTML, CSS
@@ -49,7 +50,7 @@ Database	MySQL
 Styling	Custom CSS
 Libraries Used	mysql.connector, Flask
 
-🗃️ Database Schema Overview
+##🗃️ Database Schema Overview
 Tables:
 staff (staff_id, username, email, password, ngo_id)
 
@@ -70,7 +71,7 @@ Role-based redirection (Donor vs Staff)
 
 Logout functionality available for both roles
 
-📂 How to Run Locally
+##📂 How to Run Locally
 Clone the repository:
 
 bash
@@ -104,7 +105,7 @@ Edit
 python app.py
 Visit http://127.0.0.1:5000/ in your browser.
 
-📌 Future Enhancements
+##📌 Future Enhancements
 Track expenses and fund utilization
 
 Add automated email acknowledgments
