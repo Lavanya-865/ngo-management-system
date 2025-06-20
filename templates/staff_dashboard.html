@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    .navbar {
+      background: #004d40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .stat-box {
+      width: 22%;
+      padding: 15px;
+      background: #00796b;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .stat-box h3 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+    .stat-box p {
+      color: #e0e0e0;
+    }
+    .recent-donations {
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #004d40;
+      color: white;
+    }
+    .btn {
+      background: #00796b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .btn:hover {
+      background: #00695c;
+    }
+    .logout-button {
+  background-color: #d9534f;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.logout-button:hover {
+  background-color: #c9302c;
+}
+
+  </style>
+</head>
+<body>
+  <div style="text-align: right;">
+    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+  </div>
+  <div class="navbar">
+    NGO Management Dashboard
+  </div>
+  <div class="container">
+    <div class="stats">
+      <div class="stat-box">
+        <h3>₹{{ total_donations }}</h3>
+        <p>Total Donations</p>
+      </div>
+      <div class="stat-box">
+        <h3>{{ total_inkind }}</h3>
+        <p>In-Kind Donations</p>
+      </div>
+      <div class="stat-box">
+        <h3>{{ total_inventory }}</h3>
+        <p>Total Inventory Items</p>
+      </div>
+      <div class="stat-box">
+        <h3>{{ active_donors }}</h3>
+        <p>Active Donors</p>
+      </div>
+    </div>
+
+    <!-- Manage Inventory Button -->
+    <a href="{{ url_for('index') }}" class="btn">Manage Inventory</a>
+
+    <div class="recent-donations">
+      <h2>Recent Donations</h2>
+      <table>
+        <tr>
+          <th>Donor ID</th>
+          <th>Type</th>
+          <th>Category</th>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+        </tr>
+        {% for donation in recent_donations %}
+        <tr>
+          <td>{{ donation.donor_id }}</td>
+          <td>{{ donation.donation_type }}</td>
+          <td>{{ donation.category or '-' }}</td>
+          <td>{{ donation.item or '-' }}</td>
+          <td>{{ donation.quantity or '-' }}</td>
+          <td>₹{{ donation.amount or '-' }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</body>
+</html>

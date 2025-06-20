@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Item</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add New Item</h1>
+    <form method="POST">
+        Item Name: <input type="text" name="item_name" required><br>
+        Category: <input type="text" name="category" required><br>
+        Quantity: <input type="number" name="quantity" required><br>
+        <input type="submit" value="Add Item">
+    </form>
+    <a href="/">Back to Inventory</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Donate In-Kind</title>
+                <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+            </head>
+            <body>
+                <div class="container">
+                    <h2>In-Kind Donation</h2>
+                    <form method="POST">
+                        <label for="category">Category:</label>
+                        <input type="text" id="category" name="category" required>
+            
+                        <label for="item">Item:</label>
+                        <input type="text" id="item" name="item" required>
+            
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" required>
+            
+                        <label>
+                            <input type="checkbox" name="anonymous"> Donate Anonymously
+                        </label>
+            
+                        <button type="submit">Donate</button>
+                    </form>
+                </div>
+            </body>
+</html>

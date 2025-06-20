@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Money</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .qr-image {
+            width: 100%;
+            height: auto;
+        }
+        .pay-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .pay-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="donationForm" method="POST" action="{{ url_for('donate_money') }}">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required>
+    
+        <label>
+            <input type="checkbox" name="anonymous"> Donate Anonymously
+        </label>
+    
+        <button type="button" id="payButton">Pay Now</button>
+    </form>
+    
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Scan to Pay</h3>
+            <img src="{{ url_for('static', filename='qr_code.png') }}" alt="UPI QR Code" class="qr-image">
+            <p>Please scan the QR code with any UPI app to complete your donation.</p>
+            <button class="pay-button" onclick="confirmPayment()">Payment Done</button>
+        </div>
+    </div>
+    
+    <script>
+        function showModal() {
+            document.getElementById("qrModal").style.display = "block";
+        }
+    
+        function closeModal() {
+            document.getElementById("qrModal").style.display = "none";
+        }
+    
+        function confirmPayment() {
+            let form = document.getElementById("donationForm");
+            
+            // Ensure the payment_done field is appended before submission
+            let existingInput = document.querySelector("input[name='payment_done']");
+            if (!existingInput) {
+                let paymentConfirmed = document.createElement("input");
+                paymentConfirmed.type = "hidden";
+                paymentConfirmed.name = "payment_done";
+                paymentConfirmed.value = "true";
+                form.appendChild(paymentConfirmed);
+            }
+    
+            form.submit(); // Submit form properly
+        }
+    
+        document.getElementById("payButton").addEventListener("click", function () {
+            let amount = document.getElementById("amount").value;
+            if (amount && amount > 0) {
+                showModal();
+            } else {
+                alert("Please enter a valid amount.");
+            }
+        });
+    </script>
+    
+</body>
+</html>

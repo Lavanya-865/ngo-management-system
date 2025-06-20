@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+</head>
+<body>   
+    <div class="container">
+        <div style="text-align: right; padding: 10px;">
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>   
+        <h2>Choose Donation Type</h2>
+        <a class="btn" href="{{ url_for('donate_kind') }}">Donate In-Kind (Items)</a>
+        <a class="btn" href="{{ url_for('donate_money') }}">Donate Money</a>
+    </div>
+</body>
+</html>

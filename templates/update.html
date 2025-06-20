@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Quantity</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Update Quantity for {{ item['item_name'] }}</h1>
+    <form method="POST">
+        New Quantity: <input type="number" name="quantity" value="{{ item[3] }}" required><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/">Back to Inventory</a>
+</body>
+</html>
